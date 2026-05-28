@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tip Calculator & Bill Splitter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="app">
+    <section class="left">
+      <h1>Tip Calculator</h1>
+      <p class="subtitle">
+        Split bills instantly with live updates. No calculate button needed.
+      </p>
+
+      <div class="field-group">
+        <label for="bill">Bill Amount (₹)</label>
+
+        <div class="input-wrap">
+          <span class="currency">₹</span>
+
+          <input
+            id="bill"
+            class="with-currency"
+            type="text"
+            inputmode="decimal"
+            autocomplete="off"
+            placeholder="0.00"
+          />
+        </div>
+
+        <div class="error-text" id="billError"></div>
+      </div>
+
+      <div class="field-group">
+        <label>Tip Percentage</label>
+
+        <div class="tip-buttons">
+          <button class="tip-btn" data-tip="10">10%</button>
+          <button class="tip-btn active" data-tip="15">15%</button>
+          <button class="tip-btn" data-tip="20">20%</button>
+          <button class="tip-btn" data-tip="25">25%</button>
+        </div>
+
+        <div class="custom-tip-row">
+          <div class="percent-box">
+            <input
+              id="customTip"
+              class="percent-input"
+              type="text"
+              inputmode="decimal"
+              placeholder="Enter Custom Tip"
+            />
+            <span class="percent-symbol">%</span>
+          </div>
+        </div>
+
+        <div class="error-text" id="tipError"></div>
+      </div>
+
+      <div class="field-group">
+        <label for="people">Number of People</label>
+
+        <input
+          id="people"
+          type="text"
+          inputmode="numeric"
+          autocomplete="off"
+          placeholder="1"
+          value="1"
+        />
+
+        <div class="error-text" id="peopleError"></div>
+      </div>
+    </section>
+
+    <aside class="right">
+      <div>
+        <div class="result-card">
+          <div class="result-label">Total Tip</div>
+          <div class="result-value small-result" id="tipAmount">₹0.00</div>
+        </div>
+
+        <div class="result-card">
+          <div class="result-label">Grand Total</div>
+          <div class="result-value small-result" id="grandTotal">₹0.00</div>
+        </div>
+
+        <div class="result-card">
+          <div class="result-label">Per Person</div>
+          <div class="result-value" id="perPerson">₹0.00</div>
+        </div>
+
+        <div class="note">
+          Values update live while typing. Invalid fields pause calculations
+          until corrected.
+        </div>
+      </div>
+
+      <button class="reset-btn" id="resetBtn">
+        Reset Calculator
+      </button>
+    </aside>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
